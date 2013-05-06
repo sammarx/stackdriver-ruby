@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = "stackdriver"
-  s.version = "0.2.0.pre"
+  s.version = "0.1.1"
   s.authors = ["Grant T. Olson"]
   s.email = ["kgo@grant-olson.net"]
   s.homepage = "https://github.com/grant-olson/stackdriver-ruby"
