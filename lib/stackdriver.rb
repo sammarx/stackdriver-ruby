@@ -24,7 +24,7 @@ module StackDriver
     http.use_ssl = true
 
     http.start do |http|
-      http.post(uri.path, msg.to_json, headers)
+      http.post(uri.path, msg, headers)
     end
   end
 
