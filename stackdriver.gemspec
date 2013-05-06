@@ -6,8 +6,9 @@ Gem::Specification.new do |s|
   s.homepage = "https://github.com/grant-olson/stackdriver-ruby"
   s.summary = "Send StackDriver custom metrics"
   s.description = "Send StackDriver custom metrics via the API."
-  
-  s.files = ["./lib/stackdriver.rb"]
+  s.license = "BSD 3 Clause"
+
+  s.files = ["LICENSE", "./lib/stackdriver.rb"]
 
   s.add_dependency 'multi_json', '>= 1.7.0'
 end
