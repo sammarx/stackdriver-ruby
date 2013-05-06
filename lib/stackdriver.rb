@@ -24,7 +24,10 @@ module StackDriver
     http.use_ssl = true
 
     http.start do |http|
-      http.post(uri.path, msg, headers)
+      response = http.post(uri.path, msg, headers)
+      if response.code != "201"
+        raise RuntimeError, "#{response.code} - #{response.body}"
+      end
     end
   end
 
