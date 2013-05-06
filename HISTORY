@@ -1,0 +1,13 @@
+0.1.1 - 2013-05-06
+==================
+
+* BSD license.
+
+* Fixed issue where we double-encoded JSON after moving to multi_json.
+
+* We now raise an exception if we get a bad HTTP status code back.
+
+0.1.0 - 2013-05-06
+==================
+
+* Initial release.
