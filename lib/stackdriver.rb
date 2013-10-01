@@ -8,8 +8,8 @@ module StackDriver
     @api_key = api_key
   end
   
-  def self.send_metric name, value, time
-    msg = build_message name, value, time
+  def self.send_metric name, value, time, instance=''
+    msg = build_message name, value, time, instance
     post MultiJson.dump(msg)
   end
 
@@ -31,9 +31,9 @@ module StackDriver
     end
   end
 
-  def self.build_message name, value, time
+  def self.build_message name, value, time, instance=''
     data_point = {'name' => name, 'value' => value, 'collected_at' => time}
-    
+    data_point.merge!('instance' => instance) unless instance.empty?
     {'timestamp' => Time.now.to_i, 'customer_id' => @customer_id,
       'proto_version' => '1', 'data' => data_point}
   end
