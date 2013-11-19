@@ -16,6 +16,9 @@ StackDriver.init customer_id, api_key
 
 # Send single metric value
 StackDriver.send_metric "test_metric", 666, Time.now.to_i
+
+# Send single metric value with instance id
+Stackdriver.send_metric "test_metric", 666, Time.now.to_i, "i-12345"
 ```
 
 Software Verification
