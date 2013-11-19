@@ -1,3 +1,8 @@
+0.2.0 - 2013-11-19
+==================
+
+* added instance as optional parameter for messages.  (Courtesy Sam Marx)
+
 0.1.1 - 2013-05-06
 ==================
 
