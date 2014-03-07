@@ -20,6 +20,9 @@ StackDriver.send_metric "test_metric", 666, Time.now.to_i
 # Send single metric value with instance id
 Stackdriver.send_metric "test_metric", 666, Time.now.to_i, "i-12345"
 ```
+# Delete single metric value
+# Note that the removal will take effect roughly two hours after the request has been sent
+StackDriver.delete_metric "test_metric", Time.now.to_i
 
 Software Verification
 ---------------------
