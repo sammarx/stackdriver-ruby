@@ -1,11 +1,11 @@
 Gem::Specification.new do |s|
   s.name = "stackdriver"
-  s.version = "0.2.0"
-  s.authors = ["Grant T. Olson"]
-  s.email = ["kgo@grant-olson.net"]
-  s.homepage = "https://github.com/grant-olson/stackdriver-ruby"
-  s.summary = "Send StackDriver custom metrics"
-  s.description = "Send StackDriver custom metrics via the API."
+  s.version = "0.3.0"
+  s.authors = ["Grant T. Olson",'Sam Marx']
+  s.email = ["smarx@spredfast.com"]
+  s.homepage = "https://github.com/sammarx/stackdriver-ruby"
+  s.summary = "Stackdriver API"
+  s.description = "Work with Stackdriver through the API."
   s.license = "BSD 3 Clause"
 
   s.files = ["LICENSE", "./lib/stackdriver.rb"]

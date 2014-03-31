@@ -1,10 +1,9 @@
 require 'multi_json'
 
 module StackDriver
-  POST_URI = "https://custom-gateway.stackdriver.com/v1/custom"
+  POST_URI = "https://api.stackdriver.com/v0.2/"
   
-  def self.init customer_id, api_key
-    @customer_id = customer_id
+  def self.init api_key
     @api_key = api_key
   end
   
@@ -34,7 +33,6 @@ module StackDriver
   def self.build_message name, value, time, instance=''
     data_point = {'name' => name, 'value' => value, 'collected_at' => time}
     data_point.merge!('instance' => instance) unless instance.empty?
-    {'timestamp' => Time.now.to_i, 'customer_id' => @customer_id,
-      'proto_version' => '1', 'data' => data_point}
+    {'timestamp' => Time.now.to_i, 'proto_version' => '1', 'data' => data_point}
   end
 end
