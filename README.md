@@ -10,9 +10,8 @@ Usage
 require 'stackdriver'
 
 # One time setup
-customer_id = 1
 api_key = "foo"
-StackDriver.init customer_id, api_key
+StackDriver.init api_key
 
 # Send single metric value
 StackDriver.send_metric "test_metric", 666, Time.now.to_i
