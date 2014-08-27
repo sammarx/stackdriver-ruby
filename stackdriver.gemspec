@@ -4,8 +4,8 @@ Gem::Specification.new do |s|
   s.authors = ["Grant T. Olson",'Sam Marx']
   s.email = ["smarx@spredfast.com"]
   s.homepage = "https://github.com/sammarx/stackdriver-ruby"
-  s.summary = "Stackdriver API"
-  s.description = "Work with Stackdriver through the API."
+  s.summary = "Stackdriver API and custom metrics"
+  s.description = "Gem for Stackdriver API and custom metrics."
   s.license = "BSD 3 Clause"
 
   s.files = ["LICENSE", "./lib/stackdriver.rb"]
