@@ -18,7 +18,31 @@ StackDriver.send_metric "test_metric", 666, Time.now.to_i
 
 # Send single metric value with instance id
 Stackdriver.send_metric "test_metric", 666, Time.now.to_i, "i-12345"
+
+# Send multiple metric values with instance_id
+Stackdriver.send_multi_metric data_point_array
+
+where data is an array of this type:
+data = [
+  {
+     'name': 'my_custom_metric1',
+     'value': 32,
+     #Note: Stackdriver rejects when the collected_at value is older than 2 hours.
+     'collected_at': 1325394000,
+     #Note: Include an instance value if your metric is tied to an instance.
+     #'instance': 'i-XXXXXXXX',
+  },
+  {
+     'name': 'my_custom_metric2',
+     'value': 37,
+﻿     #Note: Stackdriver rejects when the collected_at value is older than 2 hours.
+     'collected_at': 1325394000,
+     #Note: Include an instance value if your metric is tied to an instance.
+     #'instance': 'i-XXXXXXXX',
+  }
+]
 ```
+
 # Delete single metric value
 # Note that the removal will take effect roughly two hours after the request has been sent
 StackDriver.delete_metric "test_metric", Time.now.to_i
