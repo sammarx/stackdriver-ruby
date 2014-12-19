@@ -17,6 +17,11 @@ end
     post MultiJson.dump(msg), StackDriver::POST_URI
   end
 
+  def self.send_multi_metrics data
+    msg = build_multi_message data
+    post MultiJson.dump(msg), StackDriver::POST_URI
+  end
+
   def self.delete_metric name, time
     msg = build_message name, nil, time
     post MultiJson.dump(msg), StackDriver::DELETE_URI
@@ -45,5 +50,14 @@ end
     data_point.merge!('value' => value) unless value.nil?
     data_point.merge!('instance' => instance) unless instance.empty?
     {'timestamp' => Time.now.to_i, 'proto_version' => '1', 'data' => data_point}
+  end
+
+  def self.build_multi_message data
+    data_point = data
+    {
+        'timestamp' => Time.now.to_i,
+        'proto_version' => '1',
+        'data' => data_point
+    }
   end
 end
